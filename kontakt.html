@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/card-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <style>
+        .banner-kontakt {
+            height: 700px;
+            margin-top: 100px;
+
+        }
+
+        .footer {
+            margin-top: 130px;
+        }
+
+        body {
+            background: url(img/kontakt/kontakt@2x.png) no-repeat;
+            background-position: 0 120px;
+            background-size: contain;
+        }
+
+        .contact-form-kontakt {
+            height: auto;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .16);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .flex-contact-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        .contact-image {
+            display: none;
+            height: 360px;
+            overflow: hidden;
+        }
+
+        .col-contact {
+            transform: translateY(80px);
+        }
+
+        .contact-image img {
+            height: 100%;
+            width: 100%;
+            transform: translateY(40px);
+        }
+
+        .flex-contact-form {
+            flex-basis: 35%;
+            margin-left: 30%;
+        }
+
+        .prijateljVasegZdravlja-contact {
+            margin-top: 18%;
+            width: 100%;
+            font-family: Satisfy;
+            font-size: 3em;
+            line-height: 1.43;
+            text-align: center;
+            color: #291568;
+            transform: translateY(50px);
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top p-0">
+            <a class="navbar-brand nav-item nav-link" href="index.html">
+                <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+            </a>
+            <div class="icons d-flex position-fixed justify-content-between">
+                <a style="position: relative;" href="korpa.html"><img src="img/shopping-cart (1).svg" alt="">
+                    <span id="cart-counter" class="cart-counter"></span>
+                </a>
+                <a data-toggle="modal" data-target="#exampleModalLogin"><img src="img/Group 211.svg" alt=""></a>
+            </div>
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+                <div class="navbar-nav m-auto align-items-center justify-content-center">
+                    <div id="nav-links-left" class="d-flex pr-4">
+                        <a class="nav-item nav-link from-left" href="proizvodi.html">PROIZVODI</a>
+                        <a class="nav-item nav-link from-left" href="o-nama.html">O NAMA</a>
+                        <a class="nav-item nav-link from-left" href="recepti.html">RECEPTI</a>
+                    </div>
+                    <a class="nav-link logo-nav-item" href="index.html">
+                        <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+                    </a>
+                    <div id="nav-links-right" class="d-flex pl-4">
+                        <a class="nav-item nav-link from-left" href="galerija.html">GALERIJA</a>
+                        <a class="nav-item nav-link from-left faq-link" href="faq.html">FAQ</a>
+                        <a class="nav-item nav-link from-left active-nav-item" href="kontakt.html">KONTAKT</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner-kontakt h-100">
+
+        <div class="row w-100 m-0">
+            <div class="col-lg-7 col-12 p-0 image-mobile">
+                <!-- <div class="contact-image">
+                    <img src="img/kontakt/kontakt@2x.png" alt="">
+                </div> -->
+            </div>
+            <div class="col-lg-4 col-md-8 col-10 offset-md-2 offset-1 offset-lg-0 col-contact container">
+                <div class="contact-form-kontakt">
+                    <form class="p-4 form-footer">
+                        <h2 class="header20-blue mb-4">Kontakt forma</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-kontakt-forma" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-4">
+                            <button type="submit" id="kontakt-submit-forma"
+                                class="btn btn-pogledajsve-blue h-75 kontakt-submit-form">POŠALJI</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-center">
+        <div class="prijateljVasegZdravlja-contact">Prijatelj Vašeg zdravlja</div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="contact">
+            <div class="row w-100">
+
+                <div
+                    class="col-lg-3 col-md-4 col-sm-5 col-6 mt-md-5 align-items-center mb-md-1 px-0 d-flex footer-info footer-kontakt">
+                    <ul>
+                        <li>
+                            <div class="header20-white py-4">Mljekara Lazine</div>
+                        </li>
+                        <li>
+                            <p><img src="img/placeholder.svg" alt="">Lazine bb, Danilovgrad 81410</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 169.svg" alt="">mljekara.lazine@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 167.svg" alt="">Tel: +382 20 815 312</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 168.svg" alt="">Fax: +382 20 815 313</p>
+                        </li>
+
+                    </ul>
+                    <div class="icon-tab">
+                        <p class="mt-3">Follow us on</p>
+                        <a class="icon-button" href="https://www.facebook.com/lazinemljekara/"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icon-button" href="https://www.instagram.com/mljekaralazine/"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div id="map" class="col-lg-9 col-md-8 col-sm-7 col-6 h-100"
+                    style="position: absolute; right: 0; bottom: 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-credists ">
+        <h4>© Mljekara Lazine 2019, Powered by <a href="">Amplitudo</a></h4>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalRegister" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Registrujte se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" id="ime-reg" name="ime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Ime">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="prezime-reg" name="prezime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Prezime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" style="border-radius: 0;" class="form-control"
+                            placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" style="border-radius: 0;"
+                            class="form-control" placeholder="Nova lozinka">
+                    </div>
+
+                    <h6>Datum rođenja</h6>
+
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <select name="datepicker" id="datepicker">
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select>
+                                <option name="" id="januar">JAN</option>
+                                <option name="" id="februar">FEB</option>
+                                <option name="" id="mart">MAR</option>
+                                <option name="" id="april">APR</option>
+                                <option name="" id="maj">MAJ</option>
+                                <option name="" id="jun">JUN</option>
+                                <option name="" id="jul">JUL</option>
+                                <option name="" id="avgust">AVG</option>
+                                <option name="" id="septembar">SEP</option>
+                                <option name="" id="oktobar">OKT</option>
+                                <option name="" id="novembar">NOV</option>
+                                <option name="" id="decembar">DEC</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select name="yearpicker" id="yearpicker">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="container-radio mr-4">Ženski
+                            <input type="radio" name="radio" value="Ženski">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio">Muški
+                            <input type="radio" name="radio" value="Muški">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-inline">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-pogledajsve-blue float-right">REGISTRUJTE SE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Prijavite se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input type="email" id="email-login" name="email-login" style="border-radius: 0;"
+                            class="form-control" placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" style="border-radius: 0;" class="form-control" placeholder="Lozinka">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Zaboravili ste nalog?
+                        </a>
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Mijenjajte lozinku.
+                        </a>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button id="prijava-submit" type="submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLozinka" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Mijenjajte lozinku</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input id="password-stari" type="password" style="border-radius: 0;" class="form-control"
+                            placeholder="Unesite poslednju lozinku">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi" style="border-radius: 0;" class="form-control"
+                            placeholder="Nova lozinka">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi-potvrda" style="border-radius: 0;" class="form-control"
+                            placeholder="Potvrdite novu lozinku">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button type="submit" id="promjena-lozinke-submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.nice-select.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom-js.js"></script>
+
+    <script>
+        function initMap() {
+
+            var locationCenter = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var location = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: locationCenter,
+
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap">
+    </script>
+
+
+</body>
+
+</html>

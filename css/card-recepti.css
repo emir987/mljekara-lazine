@@ -1,0 +1,37 @@
+.grid-card-recepti {
+    display: grid;
+    justify-content: center;
+    grid-gap: 60px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.prep-time-section {
+    color: white;
+    font-size: .8em;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 40%;
+    height: auto;
+    background-color: #e55d09;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 13px;
+    transform: translateX(-20px);
+}
+
+.prep-time-header {
+    text-transform: uppercase;
+}
+
+.card-a {
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.card-a:hover {
+    text-decoration: none;
+}

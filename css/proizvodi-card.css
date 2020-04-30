@@ -1,0 +1,120 @@
+.carousel-card {
+    position: relative;
+    height: 400px;
+}
+
+.item-card {
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 41px;
+
+}
+
+.proizvod-header {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.proizvodi-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 150px;
+    column-gap: 40px;
+}
+
+.card-row {
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.section-proizvodi {
+    margin-top: 180px;
+}
+
+.card-body a {
+    color: #656565;
+}
+
+.card-body p {
+    margin-bottom: .2rem !important;
+}
+
+.popOver {
+
+    -webkit-animation: bummer 2s;
+    animation: bummer 1s;
+    -webkit-transform: scale(.6);
+    transform: scale(.6);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes bummer {
+    100% {
+        -webkit-transform: scale(1, 1);
+    }
+}
+
+@keyframes bummer {
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.jogurt-collapse-item {
+    margin-bottom: 1rem;
+}
+
+.detaljnije a {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 0.8em;
+    color: #e55d09;
+    text-decoration: underline !important;
+    transition: all .4s ease;
+    padding: 5px;
+}
+
+.detaljnije:hover a {
+    background-color: #e55d09;
+    color: white;
+    cursor: pointer;
+}
+
+.card-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    color: #656565;
+}
+
+.inactive {
+    display: none;
+}
+
+.item-card {
+    height: auto;
+    transition: all .5s ease;
+}
+
+.item-card:hover {
+    transform: scale(0.96) !important;
+    cursor: pointer;
+}
+
+.carousel-image {
+    max-width: unset;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-card img {
+    position: absolute;
+    width: 90% !important;
+    top: 0;
+    transform: translate(-50%, -30%);
+    left: 50%;
+
+
+}

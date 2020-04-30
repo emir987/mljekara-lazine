@@ -1,0 +1,166 @@
+{
+    "proizvodi": [{
+            "id": 1,
+            "type": "mlijeko",
+            "name": "Pasterizovano mlijeko",
+            "detail": "2.8 mm 1l",
+            "price": 1.50,
+            "image": "img/mlijeko.png"
+        },
+        {
+            "id": 2,
+            "type": "mlijeko",
+            "name": "Pasterizovano mlijeko",
+            "detail": "2.8 mm 1l",
+            "price": 1.50,
+            "image": "img/mlijeko.png"
+        },
+        {
+            "id": 3,
+            "type": "mlijeko",
+            "name": "Pasterizovano mlijeko",
+            "detail": "2.8 mm 1l",
+            "price": 1.50,
+            "image": "img/mlijeko.png"
+        },
+        {
+            "id": 4,
+            "type": "mlijeko",
+            "name": "Pasterizovano mlijeko",
+            "detail": "2.8 mm 1l",
+            "price": 1.50,
+            "image": "img/mlijeko.png"
+        },
+        {
+            "id": 5,
+            "type": "jogurt",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "3.4 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/jogurt04@2x.png"
+        },
+        {
+            "id": 6,
+            "type": "jogurt",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "3.4 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/jogurt04@2x.png"
+        },
+        {
+            "id": 7,
+            "type": "jogurt",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "3.4 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/jogurt04@2x.png"
+        },
+        {
+            "id": 8,
+            "type": "jogurt",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "3.4 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/jogurt04@2x.png"
+        },
+        {
+            "id": 9,
+            "type": "jogurt-05",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "0.5 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/dijet.png"
+        },
+        {
+            "id": 10,
+            "type": "jogurt-05",
+            "name": "Svjeze mlijeko u flaši",
+            "detail": "0.5 mm 1l",
+            "price": 1.50,
+            "image": "img/proizvodi/dijet.png"
+        },
+        {
+            "id": 11,
+            "type": "pavlaka",
+            "name": "Kisjela pavlaka",
+            "detail": "20% mm 0.5kg",
+            "price": 2.20,
+            "image": "img/proizvodi/pavlaka.png"
+        },
+        {
+            "id": 12,
+            "type": "pavlaka",
+            "name": "Kisjela pavlaka",
+            "detail": "20% mm 0.5kg",
+            "price": 2.20,
+            "image": "img/proizvodi/pavlaka.png"
+        },
+        {
+            "id": 13,
+            "type": "pavlaka",
+            "name": "Kisjela pavlaka",
+            "detail": "20% mm 0.5kg",
+            "price": 2.20,
+            "image": "img/proizvodi/pavlaka.png"
+        },
+        {
+            "id": 14,
+            "type": "kajmak",
+            "name": "Sir kriška",
+            "detail": "5kg",
+            "price": 5.20,
+            "image": "img/proizvodi/sir.png"
+        },
+        {
+            "id": 15,
+            "type": "kajmak",
+            "name": "Sir kriška",
+            "detail": "5kg",
+            "price": 5.20,
+            "image": "img/proizvodi/sir.png"
+        }
+    ],
+
+
+    "faq": [{
+            "id": 1,
+            "pitanje": "Što je<br>mlijeko?",
+            "odgovor": "Mlijeko je hranjiva tečnost bijele boje koja nastaje lučenjem mliječnih žlijezda ženki sisara. Ono je osnovni izvor hrane za novorođene sisare, dok još ne mogu variti ostalu hranu. Za potrebe ljudske ishrane koristi se najčešće kravlje, ovčje i kozje mlijeko. U savremenoj proizvodnji i potrošnji najveći značaj ima kravlje mlijeko i ono je u većini zemalja najdominantnija komercijalna vrsta mlijeka."
+        },
+        {
+            "id": 2,
+            "pitanje": "Iz koliko oblasti i iz kojih koorporanata mljekara lazine otkupljuje mlijeko?",
+            "odgovor": "Mljekara Lazine otkupljuje mlijeko iz sledećih opština: Danilovgrad, Podgorica, Nikšić, Bijelo Polje, Berane, Rožaje i Petnjica. Broj kooperanata od kojih se otkupljuje mlijeko se kreće od 700 do 750. Krajem proljeća jedan dio kooperanata izdiže na katune, tako da se u tom periodu broj kooperanta smanjuje, a krajem ljeta, odnosno početkom jeseni, oni se vraćaju sa katuna, kada se broj kooperanata uvećava."
+        },
+        {
+            "id": 3,
+            "pitanje": "Kada se kuva pasterizovano mlijeko lazine, zašto se pavlaka - masnoća ne „hvata“ na površinu?",
+            "odgovor": "Ovo je vrlo često postavljeno pitanje od strane domaćica. Za ovo je „kriv“ postupak homogenizacije. Homogenizacija je postupak razbijanja, usitnjavanja i izjednačavanja masnih kapljica u mlijeku,  čime se postiže veća stabilnost emulzije mliječne masti u vodi. Homogenizovano mlijeko ima puniji ukus, intenzivniju bijelu boju, a izdvajanje mliječne masti na površinu je spriječeno. Kada mlijeko nije homogenizovano krupne kapljice masti se povezuju i izdvajaju na površini. Ovo znači - kada se mlijeko homogenizuje, ono ima isti procenat masnoće kao i prije homogenizacije, bez obzira što se masne kapljice ne pojavljuju na površinu, a time se i ne može pokupiti kajmak (pavlaka – povlaka)."
+        },
+        {
+            "id": 4,
+            "pitanje": "Što je<br>mlijeko?",
+            "odgovor": "Mlijeko je hranjiva tečnost bijele boje koja nastaje lučenjem mliječnih žlijezda ženki sisara. Ono je osnovni izvor hrane za novorođene sisare, dok još ne mogu variti ostalu hranu. Za potrebe ljudske ishrane koristi se najčešće kravlje, ovčje i kozje mlijeko. U savremenoj proizvodnji i potrošnji najveći značaj ima kravlje mlijeko i ono je u većini zemalja najdominantnija komercijalna vrsta mlijeka."
+        },
+        {
+            "id": 5,
+            "pitanje": "Iz koliko oblasti i iz kojih koorporanata mljekara lazine otkupljuje mlijeko?",
+            "odgovor": "Mljekara Lazine otkupljuje mlijeko iz sledećih opština: Danilovgrad, Podgorica, Nikšić, Bijelo Polje, Berane, Rožaje i Petnjica. Broj kooperanata od kojih se otkupljuje mlijeko se kreće od 700 do 750. Krajem proljeća jedan dio kooperanata izdiže na katune, tako da se u tom periodu broj kooperanta smanjuje, a krajem ljeta, odnosno početkom jeseni, oni se vraćaju sa katuna, kada se broj kooperanata uvećava."
+        },
+        {
+            "id": 6,
+            "pitanje": "Kada se kuva pasterizovano mlijeko lazine, zašto se pavlaka - masnoća ne „hvata“ na površinu?",
+            "odgovor": "Ovo je vrlo često postavljeno pitanje od strane domaćica. Za ovo je „kriv“ postupak homogenizacije. Homogenizacija je postupak razbijanja, usitnjavanja i izjednačavanja masnih kapljica u mlijeku,  čime se postiže veća stabilnost emulzije mliječne masti u vodi. Homogenizovano mlijeko ima puniji ukus, intenzivniju bijelu boju, a izdvajanje mliječne masti na površinu je spriječeno. Kada mlijeko nije homogenizovano krupne kapljice masti se povezuju i izdvajaju na površini. Ovo znači - kada se mlijeko homogenizuje, ono ima isti procenat masnoće kao i prije homogenizacije, bez obzira što se masne kapljice ne pojavljuju na površinu, a time se i ne može pokupiti kajmak (pavlaka – povlaka)."
+        },
+        {
+            "id": 7,
+            "pitanje": "Što je<br>mlijeko?",
+            "odgovor": "Mlijeko je hranjiva tečnost bijele boje koja nastaje lučenjem mliječnih žlijezda ženki sisara. Ono je osnovni izvor hrane za novorođene sisare, dok još ne mogu variti ostalu hranu. Za potrebe ljudske ishrane koristi se najčešće kravlje, ovčje i kozje mlijeko. U savremenoj proizvodnji i potrošnji najveći značaj ima kravlje mlijeko i ono je u većini zemalja najdominantnija komercijalna vrsta mlijeka."
+        },
+        {
+            "id": 8,
+            "pitanje": "Iz koliko oblasti i iz kojih koorporanata mljekara lazine otkupljuje mlijeko?",
+            "odgovor": "Mljekara Lazine otkupljuje mlijeko iz sledećih opština: Danilovgrad, Podgorica, Nikšić, Bijelo Polje, Berane, Rožaje i Petnjica. Broj kooperanata od kojih se otkupljuje mlijeko se kreće od 700 do 750. Krajem proljeća jedan dio kooperanata izdiže na katune, tako da se u tom periodu broj kooperanta smanjuje, a krajem ljeta, odnosno početkom jeseni, oni se vraćaju sa katuna, kada se broj kooperanata uvećava."
+        }
+    ]
+}

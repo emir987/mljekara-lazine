@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3005.17" height="964.872" viewBox="0 0 3005.17 964.872">
+    <defs>
+        <style>
+            .cls-1{fill:#291568}.cls-2{filter:url(#shutterstock_1464018281)}
+        </style>
+        <filter id="shutterstock_1464018281" width="3005.17" height="964.872" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="6"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".278"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g class="cls-2">
+        <path id="shutterstock_1464018281-2" d="M671.22 1481.954c57.02-18.062 98.213-31.112 193.466-31.112s136.453 13.05 193.467 31.112c66.582 21.094 149.464 47.347 301.877 47.347s235.292-26.255 301.88-47.347c57.011-18.062 98.2-31.112 193.446-31.112s136.441 13.05 193.458 31.112c66.584 21.094 149.455 47.347 301.874 47.347s235.287-26.255 301.875-47.347c57.007-18.062 98.207-31.112 193.452-31.112s136.431 13.05 193.445 31.112c66.591 21.092 149.456 47.347 301.871 47.347V634.162h-2972V1529.3c152.424 0 235.304-26.252 301.889-47.346z" class="cls-1" data-name="shutterstock_1464018281" transform="translate(-371.34 -572.75)"/>
+    </g>
+</svg>

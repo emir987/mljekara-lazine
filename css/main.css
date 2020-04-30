@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&family=Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+.prijateljVasegZdravlja {
+    width: 100%;
+    font-family: Satisfy;
+    font-size: 3em;
+    line-height: 1.43;
+    text-align: center;
+    color: #291568;
+}
+
+
+
+.grid-text {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 21em)) 1fr;
+}
+
+.grid-text-inner {
+    grid-column: 2/4;
+}
+
+
+
+/* ================================= text ================================= */
+
+.header20-white {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.header20-blue {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #291568;
+}
+
+.cart-counter {
+    border-radius: 50%;
+    width: 35px;
+    background-color: #e55d09;
+    padding-left: 23%;
+    position: absolute;
+    top: -12px;
+    left: -22px;
+    font-size: 20px;
+    color: white;
+}
+
+
+.header-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #291568;
+}
+
+.content-above-carousel {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #656565;
+}
+
+
+/* ================================= modal =============================== */
+
+
+
+
+.modal-open {
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 0 !important;
+}
+
+
+.form-row .nice-select {
+    width: 100% !important;
+    background-color: #2815681e;
+    color: #8d8d8d;
+}
+
+.nice-select ul {
+    width: 100%;
+    height: 150px;
+    overflow-y: scroll !important;
+}
+
+
+/* The container */
+.container-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #65656583;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #291568;
+}
+
+/* On mouse-over, add a grey background color */
+.container-radio:hover input~.checkmark {
+    background-color: white;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-radio input:checked~.checkmark {
+    background-color: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:before {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-radio input:checked~.checkmark:before {
+    display: block;
+}
+
+
+
+/* Style the indicator (dot/circle) */
+.container-radio .checkmark:before {
+    top: 3px;
+    left: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #291568;
+}
+
+.mijenjaj-lozinku,
+.otvori-nalog {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: .9em;
+    font-style: italic;
+    color: #656565;
+}
+
+.mijenjaj-lozinku:hover,
+.otvori-nalog:hover {
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+
+.otvori-nalog {
+    color: #291568 !important;
+    text-decoration: underline !important;
+}
+
+.close {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+}
+
+
+/* ========================= hamburger ============================== */
+
+/* CLEARFIX */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* ALL */
+
+.row .three {
+    padding: 80px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+.hamburger .line {
+    width: 35px;
+    height: 4px;
+    background-color: rgba(80, 80, 80, 0.562);
+    display: block;
+    margin: 7px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    -ms-transform: translateY(10px) rotate(45deg);
+    -o-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+/*  banner */
+
+.banner-image-mobile {
+    display: none;
+}
+
+.banner-recepti img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}

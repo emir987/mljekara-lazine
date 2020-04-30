@@ -1,0 +1,400 @@
+/* ==============================     O NAMA      ============================ */
+
+
+@media only screen and (max-width: 1199px) {
+    .content-o-nama {
+        font-size: 15px;
+    }
+
+    .banner-o-nama {
+        height: 80vh;
+    }
+
+    button[aria-expanded="true"] {
+        color: white;
+    }
+
+}
+
+@media only screen and (max-width: 991px) {
+    .show .card-collapse {
+        padding-bottom: 480px !important;
+    }
+
+    .banner-o-nama {
+        height: 70vh !important;
+    }
+
+}
+
+@media only screen and (max-width: 691px) {
+    .banner-o-nama {
+        height: 50vh !important;
+    }
+}
+
+
+@media only screen and (max-width: 491px) {
+    .banner-o-nama {
+        height: 40vh;
+    }
+}
+
+
+/* ==============================     KONTAKT      ============================ */
+
+
+@media only screen and (max-width: 991px) {
+    body {
+        background: none !important;
+        /* background-size: cover; */
+    }
+
+    .image-mobile {
+        background: url(../img/kontakt/kontakt@2x.png) no-repeat;
+        background-size: cover;
+        background-position: -100px 0px;
+        height: 40vh;
+        width: 100%;
+    }
+
+    .contact-image img {
+        display: flex !important;
+    }
+
+    .flex-contact-section {
+        flex-direction: column;
+    }
+
+    .flex-contact-form {
+        margin: 0;
+        width: 60%;
+    }
+
+    .prijateljVasegZdravlja-contact {
+        padding: 0 0 80px;
+        font-size: 13px;
+    }
+
+}
+
+
+@media only screen and (max-width: 991px) {
+    .form-footer {
+        margin: 0;
+        padding: 2rem !important;
+    }
+
+    .col-contact {
+        transform: translateY(-40px);
+    }
+
+    .contact-image {
+        display: block;
+    }
+
+    .contact-image img {
+        height: 100%;
+        width: auto;
+        transform: translateY(40px);
+    }
+
+}
+
+@media only screen and (max-width: 501px) {
+    .form-footer {
+        padding: 1.5rem !important;
+        padding-top: 2rem !important;
+    }
+
+    .prijateljVasegZdravlja-contact {
+        font-size: 2.2em !important;
+    }
+
+    .contact-image img {
+        height: 80%;
+        width: auto;
+        transform: translate(-50px, 40px);
+    }
+
+}
+
+
+
+/* ==============================     RECEPTI      ============================ */
+
+@media only screen and (max-width: 550px) {
+
+    .prep-time-section {
+        width: 40% !important;
+        transform: scale(.85) translateX(-30px);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .prep-time-section {
+        width: 50% !important;
+        transform: scale(.85) translateX(-30px);
+    }
+}
+
+@media only screen and (max-width: 374px) {
+
+    .recept-info-content {
+        font-size: .9em !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .recept-info-image {
+        width: 100% !important;
+    }
+
+    .recept-info-content {
+        width: 100% !important;
+        flex-direction: column;
+    }
+
+    .recept-info-content div {
+        width: 100% !important;
+
+        padding: 8%;
+    }
+
+    .banner-recepti {
+        background-position: center;
+    }
+
+    .my-card-info {
+        flex-direction: column;
+    }
+
+    .grid-card-recepti {
+        grid-template-columns: 1fr;
+    }
+
+    .ostali-recepti {
+        margin-bottom: 400px;
+    }
+
+    .section-recepti {
+        margin-bottom: 400px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .recept-info-content {
+        margin: 0 !important;
+        padding: 2rem !important;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 435px) {
+    .prep-time-section {
+        width: 50%;
+    }
+}
+
+
+
+
+
+/* =====================================       OSTALO      =============================== */
+
+@media only screen and (max-width: 1160px) {
+
+    .icons {
+        transform: scale(0.8) translate(20px, 0);
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+
+    nav {
+        font-size: 13px;
+    }
+
+    .icons {
+        transform: scale(0.7) translate(30px, 0);
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+
+    textarea {
+        height: 120px !important;
+    }
+
+    .navbar-brand {
+        display: flex !important;
+    }
+
+    .contact-form {
+        position: absolute;
+        z-index: 1;
+        transform: translateY(-350px);
+        border-radius: 50px;
+    }
+
+    .footer-info {
+        margin: 80px 10px 0 10px !important;
+    }
+
+    .navbar-brand {
+        display: block;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        height: 110px;
+        top: -5px;
+        padding: 10px 0 20px;
+        background: #fff;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .16);
+        z-index: 1;
+    }
+
+
+    .navbar-brand::after {
+        content: '';
+        width: 140%;
+        height: 85px;
+        background: #fff;
+        position: absolute;
+        top: 0%;
+        left: -20%;
+        z-index: -1;
+    }
+
+    .navbar-brand img {
+        display: block;
+        margin: auto;
+    }
+
+    .logo-nav-item {
+        display: none;
+    }
+
+    .mobile-nav {
+        background: white;
+        padding: 100px 0px 20px;
+        width: 100%;
+        margin-top: 80px;
+    }
+
+
+    .navbar-toggler {
+        position: absolute;
+        right: 0;
+        outline: none !important;
+        z-index: 1;
+        border-color: white !important;
+    }
+
+    #nav-links-left,
+    #nav-links-right {
+        padding: 0 !important;
+    }
+
+    .icons {
+        left: 0;
+        z-index: 1;
+    }
+
+
+    .prijatelj-zdravlja-icons {
+        margin-top: 20px;
+    }
+
+    .prijatelj-zdravlja-section div {
+        margin: 0;
+    }
+
+    .owl-prev {
+        transform: translateX(-20px);
+    }
+
+    .owl-next {
+        transform: translateX(20px);
+    }
+
+
+    .grid-text {
+        padding: 0 40px;
+    }
+
+    .form-footer {
+        margin-top: 1rem;
+    }
+
+}
+
+
+
+/* ======================================= CAROUSEL TEXT =================================== */
+
+@media only screen and (max-width: 620px) {
+    .carousel-parent {
+        overflow: hidden;
+        padding-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .section-2text {
+        transform: translateY(30px);
+
+    }
+
+}
+
+@media only screen and (max-width: 458px) {
+    .section-2text {
+        transform: translateY(70px);
+
+    }
+
+}
+
+/* ================================================= CARD & FOOTER ========================================== */
+
+
+@media only screen and (max-width: 500px) {
+    .grid-card {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        font-size: 15px;
+    }
+
+    .footer-info {
+        padding-left: 0 !important;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+    .footer-info {
+        padding-left: 0 !important;
+        font-size: 13px;
+    }
+}
+
+
+@media only screen and (max-width: 501px) {
+
+    textarea {
+        height: 90px !important;
+    }
+}

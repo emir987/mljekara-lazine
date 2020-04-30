@@ -1,0 +1,131 @@
+/* ================================= navbar ================================= */
+
+.bg-custom {
+    background-color: white;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .16);
+    z-index: 50;
+    max-height: 80px;
+}
+
+.navbar {
+    padding-bottom: 0;
+    min-height: 80px;
+}
+
+.navbar-brand {
+    display: none;
+}
+
+.logo-nav-item {
+    position: relative;
+    text-align: center;
+    height: 110px;
+    top: 10px;
+    padding-top: 10px;
+    background: #fff;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .16);
+    z-index: 1;
+}
+
+.logo-nav-item::after {
+    content: '';
+    width: 145%;
+    height: 85px;
+    background: #fff;
+    position: absolute;
+    top: 0%;
+    left: -20%;
+    z-index: -1;
+}
+
+.nav-item {
+    color: #291568 !important;
+    padding-left: 1.3rem !important;
+    padding-right: 1.3rem !important;
+    font-family: Montserrat;
+    font-size: .9em;
+    font-weight: 700;
+    text-align: center;
+}
+
+#nav-links-left a:first-child {
+    padding-left: 0 !important;
+}
+
+#nav-links-right.a:last-child {
+    padding-right: 0 !important;
+}
+
+.faq-link {
+    padding-left: 1.7rem !important;
+    padding-right: 1.6rem !important;
+}
+
+
+
+.nav-item:hover {
+    color: #ee7900 !important;
+}
+
+.active-nav-item {
+    color: #ee7900 !important;
+}
+
+.logo {
+    width: 62%;
+    transition: all .5s ease;
+    transform: translateY(5px);
+}
+
+.logo-nav-item:hover img {
+    transform: scale(1.1);
+}
+
+
+.from-left::after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid #ee7900;
+    transform: scaleX(0);
+    transition: transform ease-in-out 0.3s;
+    transform-origin: 0% 50%;
+}
+
+.from-left:hover::after {
+    transform: scaleX(1);
+}
+
+
+.icons {
+    right: 50px;
+    width: 60px;
+    transform: scale(0.8);
+    transition: all ease 1s;
+}
+
+.icons a {
+    border-radius: 50%;
+    padding: 10px;
+    border: 1px solid #ee7900;
+}
+
+.icons a:hover {
+    cursor: pointer;
+}
+
+.icons a:first-child {
+    transform: translate(-10px);
+}
+
+
+.bg-logo {
+    position: absolute;
+    left: -60%;
+    right: 0;
+    width: 220%;
+    z-index: -1;
+    bottom: -30px;
+
+}

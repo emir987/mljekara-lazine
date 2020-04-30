@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_168" width="7.759" height="7.759" data-name="Group 168" viewBox="0 0 7.759 7.759">
+    <defs>
+        <style>
+            .cls-1{fill:#ee7900}
+        </style>
+    </defs>
+    <g id="Group_70" data-name="Group 70">
+        <g id="Group_69" data-name="Group 69">
+            <path id="Path_210" d="M7.3 2.312v-.266a.683.683 0 0 0-.682-.682h-.223A.685.685 0 0 0 6.2.843L5.552.2A.677.677 0 0 0 5.07 0H1.591a.227.227 0 0 0-.227.227v1.137h-.227a.683.683 0 0 0-.682.682v.266A.683.683 0 0 0 0 2.955v2.3a.683.683 0 0 0 .682.682h.682v1.594a.227.227 0 0 0 .227.227h4.577a.227.227 0 0 0 .227-.227V5.94h.682a.683.683 0 0 0 .682-.682v-2.3a.683.683 0 0 0-.459-.646zm-.909-.494h.227a.228.228 0 0 1 .227.227v.227h-.45zM5.031.455a.248.248 0 0 1 .2.067l.643.643a.248.248 0 0 1 .067.2h-.91zm-3.213 0h2.759v1.136a.227.227 0 0 0 .227.227H5.94v.455H1.818zM.909 2.046a.228.228 0 0 1 .227-.227h.227v.455H.909zM5.94 7.3H1.818V5.031H5.94zM7.3 5.258a.228.228 0 0 1-.227.227h-.678v-.454h.227a.227.227 0 1 0 0-.455H1.137a.227.227 0 1 0 0 .455h.227v.455H.682a.228.228 0 0 1-.227-.227v-2.3a.228.228 0 0 1 .227-.227h6.395a.228.228 0 0 1 .227.227z" class="cls-1" data-name="Path 210"/>
+        </g>
+    </g>
+    <g id="Group_72" data-name="Group 72" transform="translate(.909 3.182)">
+        <g id="Group_71" data-name="Group 71">
+            <path id="Path_211" d="M61.137 210h-.909a.227.227 0 0 0 0 .455h.909a.227.227 0 0 0 0-.455z" class="cls-1" data-name="Path 211" transform="translate(-60 -210)"/>
+        </g>
+    </g>
+    <g id="Group_74" data-name="Group 74" transform="translate(2.273 5.486)">
+        <g id="Group_73" data-name="Group 73">
+            <path id="Path_212" d="M152.985 362h-2.758a.227.227 0 1 0 0 .455h2.758a.227.227 0 1 0 0-.455z" class="cls-1" data-name="Path 212" transform="translate(-150 -362)"/>
+        </g>
+    </g>
+    <g id="Group_76" data-name="Group 76" transform="translate(2.273 6.395)">
+        <g id="Group_75" data-name="Group 75">
+            <path id="Path_213" d="M152.985 422h-2.758a.227.227 0 1 0 0 .455h2.758a.227.227 0 0 0 0-.455z" class="cls-1" data-name="Path 213" transform="translate(-150 -422)"/>
+        </g>
+    </g>
+</svg>

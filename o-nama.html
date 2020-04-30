@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/card-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <style>
+        .banner-o-nama {
+            height: 90vh;
+            padding-top: 70px;
+        }
+
+        .content-o-nama p {
+            font-size: 0.9em;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        .content-o-nama .light-p {
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+
+        .buttons-onama {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .collapse-background {
+            background-color: rgba(0, 0, 0, 0.05);
+            margin-top: 50px;
+        }
+
+        .flex-gallery {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex-gallery img {
+            width: 30%;
+        }
+
+        .btn-o-nama:hover {
+            color: white;
+            background-color: #e55d09;
+        }
+
+        button[aria-expanded="true"] {
+            color: white;
+            background-color: #e55d09;
+        }
+
+        .show .card-collapse {
+            padding-bottom: 180px;
+        }
+
+        .footer-margin {
+            margin-top: 180px;
+        }
+
+        .footer-onama {
+            height: 400px;
+            background-color: #291568;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 991px) {
+            .footer-margin {
+                margin-top: 450px !important;
+            }
+        }
+
+        @media only screen and (max-width: 691px) {
+            .banner-o-nama {
+                height: 60vh;
+                padding-top: 80px;
+            }
+        }
+
+        #collapseVideo {
+            min-height: 700px;
+        }
+
+        .ratio-16-9 {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%;
+        }
+
+        .ratio-inner {
+            display: block;
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top p-0">
+            <a class="navbar-brand nav-item nav-link" href="index.html">
+                <img class="w-75" style="text-align: center;" src="img/Group 1.svg" alt="">
+            </a>
+            <div class="icons d-flex position-fixed justify-content-between">
+                <a style="position: relative;" href="korpa.html"><img src="img/shopping-cart (1).svg" alt="">
+                    <span id="cart-counter" class="cart-counter"></span>
+                </a>
+                <a data-toggle="modal" data-target="#exampleModalLogin"><img src="img/Group 211.svg" alt=""></a>
+            </div>
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+                <div class="navbar-nav m-auto align-items-center justify-content-center">
+                    <div id="nav-links-left" class="d-flex pr-4">
+                        <a class="nav-item nav-link from-left" href="proizvodi.html">PROIZVODI</a>
+                        <a class="nav-item nav-link from-left active-nav-item" href="o-nama.html">O NAMA</a>
+                        <a class="nav-item nav-link from-left" href="recepti.html">RECEPTI</a>
+                    </div>
+                    <a class="nav-link logo-nav-item" href="/">
+                        <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+                    </a>
+                    <div id="nav-links-right" class="d-flex pl-4">
+                        <a class="nav-item nav-link from-left" href="galerija.html">GALERIJA</a>
+                        <a class="nav-item nav-link from-left faq-link" href="faq.html">FAQ</a>
+                        <a class="nav-item nav-link from-left" href="kontakt.html">KONTAKT</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="banner-o-nama">
+        <img src="img/o-nama/o nama cover@3x.png" style="width: 100%; height: 100%;" alt="">
+    </div>
+
+    <div class="container px-5">
+        <div class="header-text pb-5 pt-2">Proizvodi</div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6 content-o-nama mb-5 order-lg-1 order-2" style="position: relative;">
+                <p>Mljekara Lazine, je privatna mljekara sa najdužom tradicijom u Crnoj Gori. Od svog osnivanja 1998.
+                    godine u svom radu i poslovanju baštini tradicionalne vrijednosti, ali i savremen pristup
+                    poslovanju, što joj je omogućilo da izraste u apsolutnog lidera crnogorskog mljekarstva.
+                </p>
+                <p class="light-p">Smještena u srcu Bjelopavlićke ravnice, okružena brojnim pašnjacima i individualnim
+                    poljoprivrednim
+                    gazdinstvima, bavi se proizvodnjom i preradom najfinijeg mlijeka. Kao rezultat dobijaju se visoko
+                    kvalitetni proizvodi koji su prepoznati i priznati od strane potrošača na teritoriji Crne Gore.
+                    Tokom 19 godina poslovanja, Mljekara Lazine kontinuirano radi na unapređivanju načina poslovanja i
+                    poštovanju najstrožijih međunarodnih standarda kvaliteta, čime pratimo misiju naše kompanije, a to
+                    je, da postanemo i budemo vjeran prijatelj zdravlja svih naših potrošača i njihovih porodica.
+                    Mlijeko se prikuplja iz Zetsko Bjelopavlićkog i sjevernog dijela Crne Gore: Nikšić, Bijelo Polje,
+                    Berane, Rožaje i Petnjica, koji svojom netaknutom prirodom, obiljem pašnjaka bogatih livadskim
+                    cvijećem i ljekovitim biljem obezbjeđuju mlijeko visokog kvaliteta, a samim tim i kvalitetne
+                    proizvode. Kvalitet naših proizvoda prepoznat je i potvrđen na brojnim međunarodnim sajmovima, gdje
+                    se često osvajaju najsjajnije medalje, a najznačajnije priznanje predstavlja povjerenje vjernih
+                    kupaca širom Crne Gore, na čijim trpezama se svakodnevno nalaze proizvodi mljekare Lazine.</p>
+                <div class="d-flex justify-content-around px-3 buttons-onama">
+
+                    <button type="button" class="btn btn-pogledajsve btn-o-nama" data-toggle="collapse"
+                        data-target="#collapseIstorijat" aria-expanded="false"
+                        aria-controls="collapseIstorijat">ISTORIJAT</button>
+                    <button type="button" class="btn btn-pogledajsve btn-o-nama" data-toggle="collapse"
+                        data-target="#collapsePartneri" aria-expanded="false"
+                        aria-controls="collapsePartneri">PARTNERI</button>
+                    <button type="button" class="btn btn-pogledajsve btn-o-nama" data-toggle="collapse"
+                        data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">VIDEO</button>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12 order-lg-2 order-1 mb-5">
+                <img class="w-100" src="img/o-nama/Group 368.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="collapse-background" class="collapse-background">
+        <div class="accordion container" id="accordion">
+
+            <div class="collapse pt-5" id="collapseIstorijat" data-parent="#accordion">
+                <div class="card-collapse">
+
+                    <p> Mljekara Lazine počela je sa radom aprila 1998. godine, u okviru „Šimšić Montmilk“ d.o.o. iz
+                        Danilovgrada, kao prva privatna mljekara u Crnoj Gori. Pored tadašnjih gigantskih društvenih
+                        mljekara, koje su dnevno prerađivale i preko 50.000 l mlijeka, maloj mljekari iz mjesta Lazine
+                        kod
+                        Danilovgrada sa 100 l dnevnog otkupa mlijeka, malo ko je predviđao opstanak, a da ne govorimo o
+                        velikom uspjehu. Uprkos takvom ambijentu, vođeni dobro poznatom izrekom „Pregaocu i Bog daje
+                        mahove“
+                        osnivači Mljekare Lazine sa svojim porodicama, uz svakodnevni i vrijedan rad i stalno prisutnu
+                        vjeru
+                        u uspjeh, izgradili su danas poznat i priznat brend Mljekara LAZINE. Uporedo sa tehnološkim,
+                        kontinuirano smo ulagali u za nas najvredniji resurs, a to su ljudi. Njihovom edukacijom
+                        unapređivali smo kvalitet proizvoda za koje imamo konstantnu želju da uvijek budu na najvišem
+                        mogućem nivou.
+                    </p>
+                    <p>Prvo međunarodno priznanje stiglo je 2004. godine sa novosadskog sajma, gdje je tada mala
+                        Mljekara
+                        Lazine, mnogima još uvijek nepoznata, osvojila najveće odličje za kvalitet proizvoda „Veliku
+                        zlatnu
+                        medalju“ sa maksimalnih 100 poena. Bilo je ovo samo prvo u nizu mnogih priznanja koja tek
+                        slijede.
+                        Povjerenje koje nam ukazuju naši potrošači i partneri za nas ujedno predstavlja najsjajniju
+                        nagradu
+                        za
+                        kvalitet rada u ovom privrednom subjektu.
+                    </p>
+                    <p> Na početku rada - 1998. godine - Mljekara je zapošljavala 5 radnika. U 2017. godini broj
+                        zaposlenih
+                        se
+                        povećao na 100 radnika, od kojih su 12 visokoobrazovani kadrovi. U ovoj godini otkupljeno je i
+                        prerađeno
+                        7,5 miliona litara mlijeka. Mlijeko se otkupljuje od oko 750 kooperanata koji se nalaze na
+                        najkvalitetnijim pašnjacima centralnog (Danilovgrad, Podgorica i Nikšić) i sjevernog dijela Crne
+                        Gore
+                        (Bijelo Polje, Berane, Rožaje i Petnjica). Odnosu prema kooperantima se pridaje veoma velika
+                        pažnja:
+                        obaveze za preuzeto mlijeko se redovno izmiruju, kooperantima se doprema kvalitetna
+                        koncentrovana
+                        stočna
+                        hrana po nabavnoj cijeni, obezbjeđuje se logistička i finansijska pomoć pri nabavci
+                        visokosteonih
+                        junica, izgradnji i opremanju objekata, otkup se realizuje svakodnevno i iz planinskih sela koja
+                        su
+                        udaljena više od 200 km od Mljekare, vrši se kontinuirana edukacija farmera sa ciljem
+                        proizvodnje
+                        što
+                        kvalitetnijeg mlijeka.
+                    </p>
+                    <p>
+                        Savremena oprema kojom upravljaju veoma obučeni i stručni kadrovi omogućava proizvodnju vrlo
+                        kvalitetnih
+                        proizvoda uz poštovanje svih standarda proizvodnje bezbjedne hrane. Od februara 2007. godine
+                        Mljekara je
+                        nosilac HACCP sertifikat. Asortiman Mljekare Lazine su svježi mliječni proizvodi, među kojima
+                        dominiraju
+                        kisjelo-mliječni proizvodi. Distribucija se svakodnevno realizuje sopstvenim voznim parkom u
+                        svim
+                        djelovima Crne Gore. Proizvodi se mogu naći u preko 2000 maloprodajnih objekata, hotela i
+                        restorana
+                        širom države. Preko 80.000 šolja mliječnih proizvoda Mljekare Lazine se dnevno popije, što znači
+                        da
+                        preko 20.000 porodica svakodnevno uživa u zadovoljstvu blagodeti zdravih mliječnih proizvoda
+                        najveće
+                        crnogorske mljekare.
+                    </p>
+                    <p>
+                        Savjestan, stručan i odgovoran rad, vrhunska tehnika i tehnologija, brižljiv i korektan odnos
+                        prema
+                        kooperantima su dobra pretpostavka činjenice da se u svim istraživanjima Mljekara Lazine
+                        identifikuje
+                        kao crnogorski brend broj 1 u proizvodnji mlijeka i apsolutni lider u prodaji kisjelo mliječnih
+                        proizvoda na crnogorskom tržištu. Privredna komora Crne Gore je dodijelila Mljekari Lazine
+                        plaketu
+                        za
+                        ostvarene uspjehe u 2011. godini. Na 80-om Međunarodnom poljoprivrednom sajmu u Novom Sada
+                        osvojeno
+                        je
+                        13 medalja, od čega su 6 velikih zlatnih medalja, 4 zlatne i 3 srebrne medalje. Shodno stalnim
+                        naporima
+                        na poboljšanju i proširenju asortimana mljekara „Lazine“ je krajem 2012. godine otkupila
+                        većinski
+                        paket
+                        akcija beranske mljekare „Zora“.
+                    </p>
+
+                    <div class="flex-gallery py-3">
+                        <img src="img/o-nama/01@2x.png" alt="slika1">
+                        <img src="img/o-nama/02@2x.jpg" alt="slika2">
+                        <img src="img/o-nama/03@2x.jpg" alt="slika3">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="collapse pt-5" id="collapsePartneri" data-parent="#accordion">
+                <div class="card-collapse">
+
+                    Kako bi naši kooperanti imali što bolje rezultate u proizvodnji mlijeka, mljekara Lazine sklopila je
+                    2008. godine ugovor o saradnji sa subotičkom firmom „GEBI“ - liderom u proizvodnji stočne hrane u
+                    Srbiji
+                    i postala njen eksluzivni distributer za centralnu i južnu regiju Crne Gore. Preduzeće „Gebi“ d.o.o.
+                    iz
+                    Čantavira je osnovano 1983. godine. Vlasnik i osnivač „Gebija“ je Gelert Ožvar koji je sa svojom
+                    porodicom i timom saradnika tokom predhodnih dvadest i pet godina uspješno stvarao i razvijao firmu.
+                    Počelo se sa uvozom komponenti za stočnu hranu, a danas je “Gebi” preduzeće specijalizovano za
+                    proizvodnju i promet stočne hrane. Iz godine u godinu „Gebi“ je rastao te je 2002. godine u
+                    Čantaviru
+                    počela izgradnja savremene mešaone stočne hrane. Fabrika je završena za oko godinu dana, a već u
+                    2004.
+                    godini „Gebi“ proizvodi i plasira na tržište visokokvalitetne koncentrate pod nazivom ENERGOFEED.
+                    „Gebi“
+                    danas zapošljava oko 100 ljudi u fabrici u Čantaviru i još 30 terenskih predstavnika koji uz pomoć
+                    tridesetak distributera na teritoriji Srbije snabdevaju oko 1.700 maloprodajnih objekata bogatom
+                    paletom
+                    proizvoda ovog preduzeća. Na ovaj način se prodaje 60 % ukupne godišnje proizvodnje. Oko 25 %
+                    proizvoda
+                    se plasira velikim farmama stoke, koje robu kupuju direktno u preduzeću, a preostalih 15 %
+                    proizvodnje
+                    se izvozi i plasira na tržišta Bosne i Herecegovine odnosno Republike Srpske, Crne Gore, Makedonije
+                    i
+                    Kosova.
+                </div>
+            </div>
+
+            <div class="collapse pt-5" id="collapseVideo" data-parent="#accordion" style=" justify-content: center;">
+                <div class="card-collapse text-center">
+                    <div class="ratio-16-9">
+                        <iframe class="ratio-inner" seamless="seamless" id="iFrame1"
+                            src="https://www.youtube.com/embed/AkiOyEaeqmI" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="footer-onama footer-margin">
+        <div class="contact container-lg">
+            <div class="row">
+                <div class="contact-form col-lg-5 col-10 offset-1 offset-lg-0">
+                    <form class="p-4 form-footer">
+                        <h2 class="header20-blue mb-4">Kontakt forma</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-kontakt-forma" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-4">
+                            <button type="submit" id="kontakt-submit-forma"
+                                class="btn btn-pogledajsve-blue h-75 kontakt-submit-form">POŠALJI</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-5 col-6 mt-md-5 mb-md-1 ml-4 pr-0 d-flex footer-info">
+                    <ul>
+                        <li>
+                            <div class="header20-white py-4">Mljekara Lazine</div>
+                        </li>
+                        <li>
+                            <p><img src="img/placeholder.svg" alt="">Lazine bb, Danilovgrad 81410</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 169.svg" alt="">mljekara.lazine@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 167.svg" alt="">Tel: +382 20 815 312</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 168.svg" alt="">Fax: +382 20 815 313</p>
+                        </li>
+
+                    </ul>
+                    <div class="icon-tab">
+                        <p class="mt-3">Follow us on</p>
+                        <a class="icon-button" href="https://www.facebook.com/lazinemljekara/"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icon-button" href="https://www.instagram.com/mljekaralazine/"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div id="map" class="col-lg-4 col-md-7 col-6 h-100" style="position: absolute; right: 0; bottom: 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-credists">
+        <h4>© Mljekara Lazine 2019, Powered by <a href="">Amplitudo</a></h4>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalRegister" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Registrujte se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" id="ime-reg" name="ime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Ime">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="prezime-reg" name="prezime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Prezime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" style="border-radius: 0;" class="form-control"
+                            placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" style="border-radius: 0;"
+                            class="form-control" placeholder="Nova lozinka">
+                    </div>
+
+                    <h6>Datum rođenja</h6>
+
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <select name="datepicker" id="datepicker">
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select>
+                                <option name="" id="januar">JAN</option>
+                                <option name="" id="februar">FEB</option>
+                                <option name="" id="mart">MAR</option>
+                                <option name="" id="april">APR</option>
+                                <option name="" id="maj">MAJ</option>
+                                <option name="" id="jun">JUN</option>
+                                <option name="" id="jul">JUL</option>
+                                <option name="" id="avgust">AVG</option>
+                                <option name="" id="septembar">SEP</option>
+                                <option name="" id="oktobar">OKT</option>
+                                <option name="" id="novembar">NOV</option>
+                                <option name="" id="decembar">DEC</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select name="yearpicker" id="yearpicker">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="container-radio mr-4">Ženski
+                            <input type="radio" name="radio" value="Ženski">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio">Muški
+                            <input type="radio" name="radio" value="Muški">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-inline">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-pogledajsve-blue float-right">REGISTRUJTE SE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Prijavite se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input type="email" id="email-login" name="email-login" style="border-radius: 0;"
+                            class="form-control" placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" style="border-radius: 0;" class="form-control" placeholder="Lozinka">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Zaboravili ste nalog?
+                        </a>
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Mijenjajte lozinku.
+                        </a>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button id="prijava-submit" type="submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLozinka" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Mijenjajte lozinku</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input id="password-stari" type="password" style="border-radius: 0;" class="form-control"
+                            placeholder="Unesite poslednju lozinku">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi" style="border-radius: 0;" class="form-control"
+                            placeholder="Nova lozinka">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi-potvrda" style="border-radius: 0;" class="form-control"
+                            placeholder="Potvrdite novu lozinku">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button type="submit" id="promjena-lozinke-submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.nice-select.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom-js.js"></script>
+
+    <script>
+        function initMap() {
+
+            var locationCenter = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var location = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: locationCenter,
+
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap">
+    </script>
+
+
+
+</body>
+
+</html>

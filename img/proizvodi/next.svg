@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.93" height="12.075" viewBox="0 0 21.93 12.075">
+    <defs>
+        <style>
+            .cls-1{opacity:.3}
+        </style>
+    </defs>
+    <g id="next" class="cls-1" transform="rotate(90 10.965 10.965)">
+        <path id="Chevron_Right_1_" d="M11.754 10.182L1.892.324A1.107 1.107 0 0 0 .325 1.888L9.4 10.965.326 20.041a1.108 1.108 0 0 0 1.568 1.565l9.862-9.859a1.117 1.117 0 0 0-.002-1.565z"/>
+    </g>
+</svg>

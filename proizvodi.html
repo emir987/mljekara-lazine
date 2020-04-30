@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proizvodi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/card-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/proizvodi-card.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+</head>
+
+<body>
+
+    <style>
+        /* =========================== collapse cards ====================== */
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        .card-header {
+            border: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+
+        .jogurt-collapse-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion div:first-child {
+            padding-top: 15px;
+        }
+
+        .accordion>div:last-child {
+            padding-bottom: 15px;
+        }
+
+        .card-header h2 {
+            border-bottom: 1px solid rgba(101, 101, 101, .3);
+            padding: 3px 0px;
+            padding-bottom: 0 !important;
+        }
+
+        .accordion div:last-child h2 {
+            border: none;
+        }
+
+        .btn-collapse {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #291568;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            transition: all .5s ease;
+        }
+
+        .btn-collapse-active {
+            font-weight: 800;
+            color: #291568 !important;
+        }
+
+        .btn-collapse:hover {
+            background-color: #291568;
+            color: white !important;
+        }
+
+        .btn-collapse:hover div svg path {
+            fill: white !important;
+        }
+
+        .card-body {
+            padding: 0 50px !important;
+        }
+
+        .show {
+            border-bottom: 1px solid rgba(101, 101, 101, .3);
+            border-left: 1px solid rgba(101, 101, 101, .3);
+        }
+
+        .jogurt-collapse-item a:hover {
+            color: black;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        /* ostalo */
+
+        .banner {
+            background: url(img/proizvodi/Proizvodi@2x.png);
+            height: 80vh;
+            background-size: cover;
+        }
+
+        .banner-image-mobile {
+            display: none;
+        }
+
+        .banner img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+
+        /* nije jos responsive, ovo ce se pobrisati, jer je od proslog, ali je mozda nes korisno */
+
+        @media only screen and (max-width: 772px) {
+            .proizvodi-cards {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            #mlijeko-cards,
+            #jogurt-cards,
+            #jogurt-05-cards,
+            #pavlaka-cards,
+            #kajmak-cards {
+                margin-top: 180px;
+            }
+
+            .center-nav-mobile {
+                text-align: center;
+                width: 100%;
+            }
+
+            .card-header {
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            .footer {
+                margin-top: 450px !important;
+            }
+
+            .section-2 {
+                margin: 0 20px !important;
+            }
+
+            .banner {
+                background: none;
+                overflow: hidden;
+                height: 35vh !important;
+            }
+
+            .section-proizvodi {
+                margin-top: 100px !important;
+            }
+
+            .banner-image-mobile {
+                height: 100%;
+                display: block;
+                width: 100%;
+                transform: translateY(80px) !important;
+            }
+
+            textarea {
+                height: 120px !important;
+            }
+        }
+
+        @media only screen and (min-width: 2301px) {
+            .banner {
+                background: url(img/proizvodi/Proizvodi@2x.png);
+                background-position-y: 30%;
+                background-size: cover;
+                height: 850px;
+            }
+        }
+
+        @media only screen and (min-width: 2601px) {
+            .banner {
+                background: url(img/proizvodi/Proizvodi@2x.png);
+                background-position-y: 30%;
+                background-size: cover;
+                height: 650px;
+            }
+        }
+
+        .hover-cart {
+            transition: all ease 1s;
+        }
+
+        .cls-1:hover {
+            fill: #e56109;
+        }
+
+        .active {
+            fill: #e56109 !important;
+        }
+
+        .cls-1 {
+            fill: rgb(105, 105, 105);
+        }
+
+        .item-counter {
+            border-radius: 50%;
+            width: 24px;
+            background-color: #e55d09;
+            padding-left: 3px;
+            position: absolute;
+            top: -8px;
+            left: -18px;
+            font-size: 15px;
+            color: white;
+            display: none;
+        }
+
+        .item-counter-active {
+            display: block !important;
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top p-0">
+            <a class="navbar-brand nav-item nav-link" href="index.html">
+                <img class="w-75" style="text-align: center;" src="img/Group 1.svg" alt="">
+            </a>
+            <div class="icons d-flex position-fixed justify-content-between">
+                <a style="position: relative;" href="korpa.html"><img src="img/shopping-cart (1).svg" alt="">
+                    <span id="cart-counter" class="cart-counter"></span>
+                </a>
+                <a data-toggle="modal" data-target="#exampleModalLogin"><img src="img/Group 211.svg" alt=""></a>
+            </div>
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+                <div class="navbar-nav m-auto align-items-center justify-content-center">
+                    <div id="nav-links-left" class="d-flex pr-4">
+                        <a class="nav-item nav-link from-left active-nav-item" href="proizvodi.html">PROIZVODI</a>
+                        <a class="nav-item nav-link from-left" href="o-nama.html">O NAMA</a>
+                        <a class="nav-item nav-link from-left" href="recepti.html">RECEPTI</a>
+                    </div>
+                    <a class="nav-link logo-nav-item" href="index.html">
+                        <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+                    </a>
+                    <div id="nav-links-right" class="d-flex pl-4">
+                        <a class="nav-item nav-link from-left" href="galerija.html">GALERIJA</a>
+                        <a class="nav-item nav-link from-left faq-link" href="faq.html">FAQ</a>
+                        <a class="nav-item nav-link from-left" href="kontakt.html">KONTAKT</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="banner">
+        <div class="banner-image-mobile">
+            <img src="img/proizvodi/Proizvodi@2x.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="section-2 my-5">
+        <div class="grid-text section-2text">
+            <div class="grid-text-inner">
+                <div class="header-text text-center m-4">Proizvodi</div>
+                <div class="content-above-carousel paragraph-text text-center">Stare narodne izreke kažu "Naše zdravlje
+                    je u našim
+                    rukama. Zdravlje
+                    na usta ulazi. Zdravlje je najveće bogatstvo".
+                    Proizvodeći mliječne proizvode već više od 19 godina, tu smo da budemo prijatelj vašeg zdravlja.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container section-proizvodi">
+        <div class="row ">
+            <div class="col-lg-3 col-12">
+
+                <div class="accordion" id="accordionExample">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0 collapse-border">
+                            <button id="mlijeko" onclick="switchItems(this)"
+                                class="btn btn-collapse btn-collapse-active buttons-toggle" type="button">
+                                <span class="center-nav-mobile">Mlijeko</span>
+                                <img src="" height="15%" class="d-flex align-self-center" alt="">
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="center-nav-mobile">Jogurt</span>
+                                <div height="15%" class="d-flex align-self-center" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21.93" height="12.075"
+                                        viewBox="0 0 21.93 12.075">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    opacity: .8
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="next" class="cls-1" transform="rotate(90 10.965 10.965)">
+                                            <path id="Chevron_Right_1_"
+                                                d="M11.754 10.182L1.892.324A1.107 1.107 0 0 0 .325 1.888L9.4 10.965.326 20.041a1.108 1.108 0 0 0 1.568 1.565l9.862-9.859a1.117 1.117 0 0 0-.002-1.565z" />
+                                        </g>
+                                    </svg>
+                                </div>
+
+                            </button>
+
+                        </h2>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="jogurt-collapse-item">
+                                    <a id="jogurt" onclick="switchItems(this)" class="buttons-toggle">
+                                        <p>Jogurt Lazine</p>
+                                        <p>3.4% mm</p>
+                                    </a>
+                                </div>
+                                <div class="jogurt-collapse-item">
+                                    <a id="jogurt-05" onclick="switchItems(this)" class="buttons-toggle">
+                                        <p>Jogurt Lazine</p>
+                                        <p>0.5% mm</p>
+                                    </a>
+                                </div>
+                                <div class="jogurt-collapse-item">
+                                    <a href="">
+                                        <p>Jogurt Vitko</p>
+                                        <p>Lazine 1% mm</p>
+                                    </a>
+                                </div>
+                                <div class="jogurt-collapse-item">
+                                    <a href="">
+                                        <p>Jogurt Vitko</p>
+                                        <p>Lazine 2.8% mm</p>
+                                    </a>
+                                </div>
+                                <div class="jogurt-collapse-item">
+                                    <a href="">
+                                        <p>Kisjelo mlijeko</p>
+                                        <p>Lazine 2.8% mm</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-collapse collapsed buttons-toggle" type="button" id="pavlaka"
+                                onclick="switchItems(this)">
+                                <span class="center-nav-mobile">Pavlaka</span>
+                                <img src="" alt="">
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-collapse collapsed buttons-toggle" type="button" id="kajmak"
+                                onclick="switchItems(this)">
+                                <span class="center-nav-mobile">Sir i kajmak</span>
+                                <img src="" alt="">
+                            </button>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="mlijeko-cards" class="col-lg-9 zamjena">
+                <div class="proizvodi-cards"></div>
+            </div>
+
+
+            <div id="jogurt-cards" class="col-lg-9 zamjena inactive">
+                <div class="proizvodi-cards"></div>
+            </div>
+
+            <div id="jogurt-05-cards" class="col-lg-9 zamjena inactive">
+                <div class="proizvodi-cards"></div>
+            </div>
+
+            <div id="pavlaka-cards" class="col-lg-9 zamjena inactive">
+                <div class="proizvodi-cards"></div>
+            </div>
+
+            <div id="kajmak-cards" class="col-lg-9 zamjena inactive">
+                <div class="proizvodi-cards"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="contact container-lg">
+            <div class="row">
+                <div class="contact-form col-lg-5 col-10 offset-1 offset-lg-0">
+                    <form class="p-4 form-footer">
+                        <h2 class="header20-blue mb-4">Kontakt forma</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-kontakt-forma" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-4">
+                            <button type="submit" id="kontakt-submit-forma"
+                                class="btn btn-pogledajsve-blue h-75 kontakt-submit-form">POŠALJI</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-5 col-6 mt-md-5 mb-md-1 ml-4 pr-0 d-flex footer-info">
+                    <ul>
+                        <li>
+                            <div class="header20-white py-4">Mljekara Lazine</div>
+                        </li>
+                        <li>
+                            <p><img src="img/placeholder.svg" alt="">Lazine bb, Danilovgrad 81410</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 169.svg" alt="">mljekara.lazine@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 167.svg" alt="">Tel: +382 20 815 312</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 168.svg" alt="">Fax: +382 20 815 313</p>
+                        </li>
+
+                    </ul>
+                    <div class="icon-tab">
+                        <p class="mt-3">Follow us on</p>
+                        <a class="icon-button" href="https://www.facebook.com/lazinemljekara/"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icon-button" href="https://www.instagram.com/mljekaralazine/"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div id="map" class="col-lg-4 col-md-7 col-6 h-100" style="position: absolute; right: 0; bottom: 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-credists">
+        <h4>© Mljekara Lazine 2019, Powered by <a href="">Amplitudo</a></h4>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalRegister" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Registrujte se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" id="ime-reg" name="ime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Ime">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="prezime-reg" name="prezime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Prezime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" style="border-radius: 0;" class="form-control"
+                            placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" style="border-radius: 0;"
+                            class="form-control" placeholder="Nova lozinka">
+                    </div>
+
+                    <h6>Datum rođenja</h6>
+
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <select name="datepicker" id="datepicker">
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select>
+                                <option name="" id="januar">JAN</option>
+                                <option name="" id="februar">FEB</option>
+                                <option name="" id="mart">MAR</option>
+                                <option name="" id="april">APR</option>
+                                <option name="" id="maj">MAJ</option>
+                                <option name="" id="jun">JUN</option>
+                                <option name="" id="jul">JUL</option>
+                                <option name="" id="avgust">AVG</option>
+                                <option name="" id="septembar">SEP</option>
+                                <option name="" id="oktobar">OKT</option>
+                                <option name="" id="novembar">NOV</option>
+                                <option name="" id="decembar">DEC</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select name="yearpicker" id="yearpicker">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="container-radio mr-4">Ženski
+                            <input type="radio" name="radio" value="Ženski">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio">Muški
+                            <input type="radio" name="radio" value="Muški">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-inline">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-pogledajsve-blue float-right">REGISTRUJTE SE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Prijavite se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input type="email" id="email-login" name="email-login" style="border-radius: 0;"
+                            class="form-control" placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" style="border-radius: 0;" class="form-control" placeholder="Lozinka">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Zaboravili ste nalog?
+                        </a>
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Mijenjajte lozinku.
+                        </a>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button id="prijava-submit" type="submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLozinka" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Mijenjajte lozinku</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input id="password-stari" type="password" style="border-radius: 0;" class="form-control"
+                            placeholder="Unesite poslednju lozinku">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi" style="border-radius: 0;" class="form-control"
+                            placeholder="Nova lozinka">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi-potvrda" style="border-radius: 0;" class="form-control"
+                            placeholder="Potvrdite novu lozinku">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button type="submit" id="promjena-lozinke-submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.nice-select.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom-js.js"></script>
+
+    <script>
+        function initMap() {
+
+            var locationCenter = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var location = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: locationCenter,
+
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap">
+    </script>
+
+
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:3000/proizvodi',
+
+                success: function (response) {
+
+                    var results = response;
+                    console.log(response);
+
+                    for (let index = 0; index < results.length; index++) {
+                        const element = results[index];
+
+
+                        var card = getCard(element, index);
+
+
+                        if (('mlijeko') == element.type) {
+                            $('#mlijeko-cards').children().append(card);
+                        } else if (element.type == "jogurt") {
+                            $('#jogurt-cards').children().append(card);
+                        } else if (element.type == "jogurt-05") {
+                            $('#jogurt-05-cards').children().append(card);
+                        } else if (element.type == "pavlaka") {
+                            $('#pavlaka-cards').children().append(card);
+                        } else if (element.type == "kajmak") {
+                            $('#kajmak-cards').children().append(card);
+                        }
+
+                    }
+                }
+            });
+        });
+
+
+        function getCard(photoObject, index) {
+
+            var quant = 0
+            var classNameCart = '';
+            let itemId = "product" + (index + 1);
+            if (localStorage.getItem(itemId) != null) {
+                quant = JSON.parse(localStorage.getItem(itemId)).quantity;
+                classNameCart = 'item-counter-active';
+            }
+
+
+            return `<div class="item-card">
+                        <div class="carousel-card" style="position: relative;">
+                            <div style="height: 65%">
+                                <img src="${photoObject.image}" class="w-100" alt="mlijeko">
+                            </div>
+                            <div class="carousel-text px-4 text-center card-content">
+                                <div class="proizvod-header d-flex justify-content-center flex-column">
+                                    <span class="name px-1">${photoObject.name}</span>
+                                    <span class="detail px-1">${photoObject.detail}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mt-4">
+                                    <div class="detaljnije">
+                                        <a href="proizvod-detaljnije.html">
+                                            detaljnije
+                                        </a>
+                                    </div>
+                                    <div style="position: relative" onclick="addCart(this, ${photoObject.id})" class="hover-cart">
+                                        <span  id="item-counter-${itemId}" class="item-counter ${classNameCart}">${quant}</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30.5" height="30.5"
+                                            viewBox="0 0 30.5 30.5">
+
+                                            <g id="shopping-cart_1_" class="cls-1" data-name="shopping-cart (1)">
+                                                <g id="shopping-cart">
+                                                    <path id="Path_223"
+                                                        d="M9.15 24.4a3.05 3.05 0 1 0 3.05 3.05 3.059 3.059 0 0 0-3.05-3.05zM0 0v3.05h3.05l5.49 11.59-2.135 3.66a5.418 5.418 0 0 0-.3 1.525 3.059 3.059 0 0 0 3.05 3.05h18.3v-3.05H9.76a.328.328 0 0 1-.305-.305v-.153l1.373-2.593h11.285A2.781 2.781 0 0 0 24.7 15.25l5.49-9.912a.84.84 0 0 0 .305-.762 1.441 1.441 0 0 0-1.52-1.526H6.405L5.033 0zm24.4 24.4a3.05 3.05 0 1 0 3.05 3.05 3.059 3.059 0 0 0-3.05-3.05z"
+                                                        data-name="Path 223" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        }
+
+
+        function addCart(productHtml, idNumber) {
+            const id = "product" + idNumber;
+
+
+            if (localStorage.getItem(id) !== null) {
+                console.log(id);
+
+                const current_item = JSON.parse(localStorage.getItem(id));
+                current_item.quantity++;
+                let counter = parseInt($('#item-counter').text()) + 1;
+                let counterID = "#item-counter-product" + idNumber;
+                localStorage.setItem(id, JSON.stringify(current_item));
+                $(counterID).html(current_item.quantity);
+                $(counterID).css("display", "block");
+
+            } else {
+                const name = $(productHtml).parent().siblings().children('.name').text();
+                const detail = $(productHtml).parent().siblings().children('.detail').text();
+                const price = 1.50;
+                const image = $(productHtml).parent().parent().siblings().children().attr('src');
+
+                const product = {
+                    name: name,
+                    detail: detail,
+                    image: image,
+                    price: price,
+                    quantity: 1
+                };
+                localStorage.setItem(id, JSON.stringify(product));
+            }
+
+            $(productHtml).children().children().addClass('active');
+
+
+            let noOfItems = localStorage.length;
+            $('#cart-counter').html(noOfItems);
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

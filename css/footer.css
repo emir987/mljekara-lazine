@@ -1,0 +1,139 @@
+.footer {
+    margin-top: 180px;
+    height: 400px;
+    background-color: #291568;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+
+.icon {
+    font-size: 1.9em;
+    color: green;
+}
+
+.icon-marker {
+    font-size: 1.9em;
+}
+
+.btn-radius {
+    border-radius: 50px;
+}
+
+.contact-form {
+    height: auto;
+    background: #fff;
+    border-radius: 50px;
+    transform: translateY(-25%);
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .16);
+}
+
+.form-control {
+    background-color: #2815681e;
+    border-radius: 14px;
+    padding-bottom: 5px;
+    padding-top: 0;
+}
+
+.form-control::placeholder {
+    color: #8d8d8d;
+    font-size: 12px;
+    line-height: 15px;
+    vertical-align: middle;
+}
+
+.form-check label {
+    color: #8d8d8d;
+}
+
+textarea {
+    resize: none;
+    padding-top: .75rem !important;
+}
+
+.header-contact {
+    color: white;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.footer-info ul li {
+    display: flex;
+}
+
+.footer-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 300;
+    color: white;
+}
+
+.footer-info ul li p img {
+    padding-right: 8px;
+    width: 20px;
+}
+
+.icon-tab {
+    display: flex;
+    align-items: center
+}
+
+.icon-tab a {
+    margin: 6px;
+}
+
+.icon-button {
+    padding: 5px;
+    display: flex;
+    background: white;
+    border-radius: 50%;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+i {
+    font-size: 24px !important;
+    color: #291568;
+    margin: 0 auto;
+}
+
+
+
+.submit-form-button {
+    padding: 7px 15px !important;
+    font-size: 11px !important;
+}
+
+.footer-credists {
+    height: 50px;
+    width: 100%;
+    background-color: #e55d09;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.footer-credists h4,
+.footer-credists a {
+
+    font-weight: 300;
+    font-size: 12px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-credists a {
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -1,0 +1,35 @@
+.pagination-custom {
+    display: flex;
+    padding-top: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-custom a {
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.9em;
+    color: #28156842;
+    padding: 8px 14px;
+    margin: 0 2vw;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination-custom a:hover {
+    color: #291568 !important;
+}
+
+.pagination-custom a img {
+    display: flex;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+}
+
+.pagination-custom a.active {
+    color: #291568;
+}
+
+.pagination-custom a:hover:not(.active) {
+    color: #28156842;
+}

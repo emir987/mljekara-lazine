@@ -1,0 +1,139 @@
+.carousel-parent {
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.header-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #291568;
+}
+
+.content-above-carousel {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #656565;
+}
+
+.contain {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.owl-prev {
+    position: absolute;
+    left: -15%;
+    top: 30%;
+
+}
+
+.owl-next {
+    position: absolute;
+    right: -15%;
+    top: 30%;
+}
+
+.owl-next span:hover,
+.owl-prev span:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+}
+
+.owl-next span,
+.owl-prev span {
+    font-size: 3.7em;
+    font-weight: lighter;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 60px;
+    color: white;
+    line-height: 45px;
+    height: 60px;
+    display: inline-block;
+    transition: all ease .5s;
+}
+
+.owl-next,
+.owl-prev {
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+.item {
+    align-items: center;
+    background-color: white;
+    color: #656565;
+    display: flex;
+    height: 330px;
+    justify-content: center;
+    border-radius: 10%;
+    position: relative;
+}
+
+
+.carousel-section {
+    margin-top: 8rem;
+    background: #ee7900;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+.carousel-section {
+    padding-top: 50px;
+}
+
+.owl-item {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.owl-item.active {
+    opacity: 1;
+}
+
+
+.carousel-image {
+    width: 100%;
+    position: relative;
+    transform: translateY(-32%);
+    max-width: 450px;
+}
+
+.carousel-image-jogurt {
+    width: 40%;
+}
+
+
+.carousel-image-first {
+    position: relative;
+    left: 10%;
+}
+
+.carousel-image-second {
+    position: relative;
+    bottom: -25px;
+    left: -10%;
+}
+
+
+.carousel-text {
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.carousel-content {
+    font-size: .8em;
+    font-weight: 300;
+    font-family: 'Rubik', sans-serif;
+}

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/card-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+
+</head>
+
+<body>
+
+    <style>
+        .gallery-header {
+            margin-top: 150px;
+        }
+
+        .row-space {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .grid-text-gallery {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 19em)) 1fr;
+        }
+
+        @media only screen and (max-width: 539px) {
+            .grid-text-gallery {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 409px) {
+            .grid-text-gallery {
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 384px) {
+            .grid-text-gallery {
+                font-size: 11px;
+            }
+        }
+
+
+        @media only screen and (max-width: 991px) {
+            .footer {
+                margin-top: 450px !important;
+            }
+
+            .row-mobile {
+                margin: 0;
+            }
+
+            .banner {
+                background: none;
+                overflow: hidden;
+                height: 35vh !important;
+                transform: translateY(80px) !important;
+            }
+
+            .banner-image-mobile {
+                height: 110%;
+                display: block;
+                width: 100%;
+            }
+
+            textarea {
+                height: 120px !important;
+            }
+        }
+
+
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.51);
+            z-index: 50;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            max-width: 1200px;
+            border-radius: 0px;
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 30px;
+            font-weight: normal;
+
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mySlides {
+            display: none;
+            padding: 45px 20px 80px;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+
+        .active {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+
+
+        .caption-container {
+            padding: 0 10px 12px;
+            max-height: 36px;
+        }
+
+        .modal-content {
+            width: 80vh;
+            margin: auto auto;
+        }
+
+        .navigation-gallery-text {
+            width: 100%;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            font-size: 11px;
+            color: #656565;
+            display: flex;
+            align-self: center;
+            white-space: nowrap;
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top p-0">
+            <a class="navbar-brand nav-item nav-link" href="index.html">
+                <img class="w-75" style="text-align: center;" src="img/Group 1.svg" alt="">
+            </a>
+            <div class="icons d-flex position-fixed justify-content-between">
+                <a style="position: relative;" href="korpa.html"><img src="img/shopping-cart (1).svg" alt="">
+                    <span id="cart-counter" class="cart-counter"></span>
+                </a>
+                <a data-toggle="modal" data-target="#exampleModalLogin"><img src="img/Group 211.svg" alt=""></a>
+            </div>
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+                <div class="navbar-nav m-auto align-items-center justify-content-center">
+                    <div id="nav-links-left" class="d-flex pr-4">
+                        <a class="nav-item nav-link from-left" href="proizvodi.html">PROIZVODI</a>
+                        <a class="nav-item nav-link from-left" href="o-nama.html">O NAMA</a>
+                        <a class="nav-item nav-link from-left" href="recepti.html">RECEPTI</a>
+                    </div>
+                    <a class="nav-link logo-nav-item" href="index.html">
+                        <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+                    </a>
+                    <div id="nav-links-right" class="d-flex pl-4">
+                        <a class="nav-item nav-link from-left active-nav-item" href="galerija.html">GALERIJA</a>
+                        <a class="nav-item nav-link from-left faq-link" href="faq.html">FAQ</a>
+                        <a class="nav-item nav-link from-left" href="kontakt.html">KONTAKT</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="grid-text-gallery  mb-5 gallery-header">
+        <div class="grid-text-inner">
+            <div class="header-text my-5 mx-3 text-center">Novi lift za dječiju bolnicu
+                kliničkog centra Crne Gore</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+
+        <div class="row w-100 row-mobile" style="grid-gap: 20px 20px;">
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(1)">
+                <a style="font-size: 1em;">
+                    <div class="mycard">
+                        <img src="img/galerija/gallery 3 2x.jpg" class="w-100" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(2)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 1 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(3)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 2 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(4)">
+                <a style="font-size: 1em;">
+                    <div class="mycard">
+                        <img src="img/galerija/gallery 1 2x.jpg" class="w-100" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(5)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 3 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(6)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 2 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(7)">
+                <a style="font-size: 1em;">
+                    <div class="mycard">
+                        <img src="img/galerija/gallery 2 2x.jpg" class="w-100" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(8)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 1 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 row-space" onclick="openModal();currentSlide(9)">
+                <div class="mycard">
+                    <a style="font-size: 1em;">
+                        <img src="img/galerija/gallery 3 2x.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 3 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 1 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 2 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 1 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 3 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 2 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 2 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 1 2x.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="img/galerija/gallery 3 2x.jpg" style="width:100%">
+            </div>
+
+
+            <div class="caption-container">
+                <div class="d-flex" style="position: absolute; left: 20px; bottom: 20px; height: 40px;">
+                    <img onclick="plusSlides(-1)" src="img/galerija/prethodna.svg" class="h-100"
+                        style="cursor: pointer;">
+                    <span class="navigation-gallery-text" style="margin-left: 10px;">Prethodna slika</span>
+                </div>
+                <div class="d-flex" style="position: absolute; right: 20px; bottom: 20px; height: 40px;">
+                    <span class=" navigation-gallery-text" style="margin-right: 10px;">Sledeća slika</span>
+                    <img onclick="plusSlides(1)" src="img/galerija/sledeca.svg" class="h-100" style="cursor: pointer;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="contact container-lg">
+            <div class="row">
+                <div class="contact-form col-lg-5 col-10 offset-1 offset-lg-0">
+                    <form class="p-4 form-footer">
+                        <h2 class="header20-blue mb-4">Kontakt forma</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-kontakt-forma" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-4">
+                            <button type="submit" id="kontakt-submit-forma"
+                                class="btn btn-pogledajsve-blue h-75 kontakt-submit-form">POŠALJI</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-5 col-6 mt-md-5 mb-md-1 ml-4 pr-0 d-flex footer-info">
+                    <ul>
+                        <li>
+                            <div class="header20-white py-4">Mljekara Lazine</div>
+                        </li>
+                        <li>
+                            <p><img src="img/placeholder.svg" alt="">Lazine bb, Danilovgrad 81410</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 169.svg" alt="">mljekara.lazine@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 167.svg" alt="">Tel: +382 20 815 312</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 168.svg" alt="">Fax: +382 20 815 313</p>
+                        </li>
+
+                    </ul>
+                    <div class="icon-tab">
+                        <p class="mt-3">Follow us on</p>
+                        <a class="icon-button" href="https://www.facebook.com/lazinemljekara/"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icon-button" href="https://www.instagram.com/mljekaralazine/"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div id="map" class="col-lg-4 col-md-7 col-6 h-100" style="position: absolute; right: 0; bottom: 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-credists">
+        <h4>© Mljekara Lazine 2019, Powered by <a href="">Amplitudo</a></h4>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalRegister" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Registrujte se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" id="ime-reg" name="ime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Ime">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="prezime-reg" name="prezime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Prezime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" style="border-radius: 0;" class="form-control"
+                            placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" style="border-radius: 0;"
+                            class="form-control" placeholder="Nova lozinka">
+                    </div>
+
+                    <h6>Datum rođenja</h6>
+
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <select name="datepicker" id="datepicker">
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select>
+                                <option name="" id="januar">JAN</option>
+                                <option name="" id="februar">FEB</option>
+                                <option name="" id="mart">MAR</option>
+                                <option name="" id="april">APR</option>
+                                <option name="" id="maj">MAJ</option>
+                                <option name="" id="jun">JUN</option>
+                                <option name="" id="jul">JUL</option>
+                                <option name="" id="avgust">AVG</option>
+                                <option name="" id="septembar">SEP</option>
+                                <option name="" id="oktobar">OKT</option>
+                                <option name="" id="novembar">NOV</option>
+                                <option name="" id="decembar">DEC</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select name="yearpicker" id="yearpicker">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="container-radio mr-4">Ženski
+                            <input type="radio" name="radio" value="Ženski">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio">Muški
+                            <input type="radio" name="radio" value="Muški">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-inline">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-pogledajsve-blue float-right">REGISTRUJTE SE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Prijavite se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input type="email" id="email-login" name="email-login" style="border-radius: 0;"
+                            class="form-control" placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" style="border-radius: 0;" class="form-control" placeholder="Lozinka">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Zaboravili ste nalog?
+                        </a>
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Mijenjajte lozinku.
+                        </a>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button id="prijava-submit" type="submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLozinka" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Mijenjajte lozinku</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input id="password-stari" type="password" style="border-radius: 0;" class="form-control"
+                            placeholder="Unesite poslednju lozinku">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi" style="border-radius: 0;" class="form-control"
+                            placeholder="Nova lozinka">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi-potvrda" style="border-radius: 0;" class="form-control"
+                            placeholder="Potvrdite novu lozinku">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button type="submit" id="promjena-lozinke-submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.nice-select.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom-js.js"></script>
+
+    <script>
+        function initMap() {
+
+            var locationCenter = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var location = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: locationCenter,
+
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap">
+    </script>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "flex";
+        }
+    </script>
+
+
+</body>
+
+</html>

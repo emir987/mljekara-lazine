@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placanje</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/card-index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/proizvodi-card.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+</head>
+
+<body>
+
+    <style>
+        /* =========================== collapse cards ====================== */
+
+        .card-header {
+            border: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+
+        .jogurt-collapse-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion div:first-child {
+            padding-top: 15px;
+        }
+
+        .accordion>div:last-child {
+            padding-bottom: 15px;
+        }
+
+        .card-header h2 {
+            border-bottom: 1px solid rgba(101, 101, 101, .3);
+            padding: 3px 0px;
+            padding-bottom: 0 !important;
+        }
+
+        .accordion div:last-child h2 {
+            border: none;
+        }
+
+        .btn-collapse {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #291568;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            transition: all .5s ease;
+        }
+
+        .btn-collapse-active {
+            font-weight: 800;
+            color: #291568 !important;
+        }
+
+        .btn-collapse:hover {
+            background-color: #291568;
+            color: white !important;
+        }
+
+        .card-body {
+            padding: 0 50px !important;
+        }
+
+        .show {
+            border-bottom: 1px solid rgba(101, 101, 101, .3);
+            border-left: 1px solid rgba(101, 101, 101, .3);
+        }
+
+        .jogurt-collapse-item a:hover {
+            color: black;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        /* ostalo */
+
+        .banner {
+            background: url(img/proizvodi/Proizvodi@2x.png);
+            height: 505px;
+            background-size: cover;
+        }
+
+        .banner-image-mobile {
+            display: none;
+        }
+
+        .banner img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+
+        /* nije jos responsive, ovo ce se pobrisati, jer je od proslog, ali je mozda nes korisno */
+        @media only screen and (max-width: 991px) {
+            .footer {
+                margin-top: 450px !important;
+            }
+
+
+            .banner {
+                background: none;
+                overflow: hidden;
+                height: 65vh !important;
+                transform: translateY(80px) !important;
+            }
+
+            .banner-image-mobile {
+                height: 80%;
+                display: block;
+                width: 100%;
+            }
+
+            textarea {
+                height: 120px !important;
+            }
+        }
+
+        @media only screen and (min-width: 1320px) {
+            .banner {
+                height: 700px;
+            }
+        }
+
+        @media only screen and (min-width: 2001px) {
+            .banner {
+                background: url(../img/proizvodi/Proizvodi@2x.png);
+                background-position-y: 30%;
+                background-size: cover;
+            }
+        }
+
+
+        .cijena-kolicina {
+            font-family: 'Montserrat', sans-serif;
+            color: #656565;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .grid-proizvodi {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 28em)) 1fr;
+        }
+
+        .grid-proizvod {
+            grid-column: 2/4;
+        }
+
+        .section-proizvodi {
+            box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 27px;
+        }
+
+        .proizvod,
+        .proizvod-single {
+            display: flex;
+        }
+
+        .proizvod-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            margin-left: 60px;
+            width: 100%;
+        }
+
+        .price {
+            font-family: 'Rubik', sans-serif;
+            font-weight: bold;
+            color: #e55d09;
+        }
+
+        .price,
+        .header20-blue {
+            font-size: 2em;
+        }
+
+        .cart-image {
+            border-right: 1px solid rgba(82, 82, 82, 0.286);
+            width: 35%;
+            height: auto;
+        }
+
+
+
+        @keyframes myAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+                position: fixed;
+                z-index: -5;
+                display: none;
+            }
+        }
+
+        .remove-element {
+
+            animation: myAnimation 1s;
+            -webkit-animation: myAnimation 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .close-btn {
+            transition: all .1s ease;
+            color: rgb(88, 88, 88);
+        }
+
+        .close-btn:hover {
+            color: red;
+            cursor: pointer;
+        }
+
+        .btn-placanje,
+        .input-kolicina {
+            width: 35% !important;
+        }
+
+        .btn-placanje {
+            padding: 7px 10px !important;
+        }
+
+        /* responsive */
+        .proizvod-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 15px;
+        }
+
+
+
+        @media only screen and (max-width: 991px) {
+            .cart-image {
+                border-right: none;
+                width: 100%;
+                padding: 0 !important;
+            }
+
+            .proizvod-content {
+                align-items: center;
+                margin: 0 !important;
+            }
+
+
+            .proizvod-header {
+                justify-content: center;
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+
+            .price,
+            .header20-blue {
+                font-size: 1.8em;
+                font-weight: bold;
+            }
+
+            .proizvod {
+                flex-direction: column;
+                padding-top: 0 !important;
+            }
+
+            .proizvod-single {
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 !important;
+                border: none;
+            }
+
+            .grid-proizvodi {
+                grid-template-columns: 1fr repeat(2, minmax(auto, 18em)) 1fr;
+            }
+
+            .close-btn {
+                display: none;
+            }
+
+            .btn-placanje,
+            .input-kolicina {
+                width: 50% !important;
+            }
+
+            .text-nastavi-kupovinu {
+                flex-direction: column;
+                text-align: right;
+            }
+
+
+
+        }
+
+        .nacin-placanja {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            font-size: .9em;
+            color: #656565;
+            font-style: italic;
+        }
+
+        .nacin-placanja label {
+            font-size: 1em;
+            font-style: normal;
+            color: #291568;
+        }
+
+        .placanje-error {
+            display: none;
+        }
+
+        .kartica-radio input:checked~.checkmark:after {
+            content: "*trenutno nije u funkciji";
+            position: absolute;
+            width: 200px;
+            left: 120px;
+            color: #ff0000;
+            font-style: italic;
+        }
+
+        .btn-pogledajsve-blue {
+            font-size: 1em;
+            padding: 7px 30px !important;
+        }
+
+        @media only screen and (max-width: 991px) {
+            .ukupno-mobile {
+                text-align: center;
+            }
+
+            .mobile-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-pogledajsve-blue {
+                width: 50%;
+                margin-top: 30px;
+            }
+
+            .section-proizvodi {
+                padding: 1.5rem !important;
+            }
+        }
+    </style>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top p-0">
+            <a class="navbar-brand nav-item nav-link" href="index.html">
+                <img class="w-75" style="text-align: center;" src="img/Group 1.svg" alt="">
+            </a>
+            <div class="icons d-flex position-fixed justify-content-between">
+                <a style="position: relative;" href="korpa.html"><img src="img/shopping-cart (1).svg" alt="">
+                    <span id="cart-counter" class="cart-counter"></span>
+                </a>
+                <a data-toggle="modal" data-target="#exampleModalLogin"><img src="img/Group 211.svg" alt=""></a>
+            </div>
+            <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+                <div class="navbar-nav m-auto align-items-center justify-content-center">
+                    <div id="nav-links-left" class="d-flex pr-4">
+                        <a class="nav-item nav-link from-left" href="proizvodi.html">PROIZVODI</a>
+                        <a class="nav-item nav-link from-left" href="o-nama.html">O NAMA</a>
+                        <a class="nav-item nav-link from-left" href="recepti.html">RECEPTI</a>
+                    </div>
+                    <a class="nav-link logo-nav-item" href="index.html">
+                        <img class="logo" style="text-align: center;" src="img/Group 1.svg" alt="">
+                    </a>
+                    <div id="nav-links-right" class="d-flex pl-4">
+                        <a class="nav-item nav-link from-left" href="galerija.html">GALERIJA</a>
+                        <a class="nav-item nav-link from-left faq-link" href="faq.html">FAQ</a>
+                        <a class="nav-item nav-link from-left" href="kontakt.html">KONTAKT</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="grid-proizvodi">
+        <div class="grid-proizvod">
+            <div id="section-proizvod" class="p-5 section-proizvodi mx-4" style="position: relative;">
+
+                <div id="section-placanje">
+                    <div class="placanje-section d-flex pt-5 flex-column ">
+                        <div class="ukupno-mobile mb-4 pb-4" style="border-bottom: 1px solid rgba(99, 99, 99, 0.541);">
+                            <span class="header20-blue mr-3">Ukupno: </span>
+                            <span id="total" class="price">4.50€</span>
+                        </div>
+                        <div class="d-flex justify-content-between mobile-flex">
+                            <div class="d-flex nacin-placanja">
+                                <div>Način plaćanja:</div>
+                                <div class="d-flex flex-column ml-4">
+                                    <label class="container-radio kartica-radio mr-4 nacin-placanja-nacin">Karticom
+                                        <input type="radio" name="radio" value="Ženski">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-radio nacin-placanja-nacin">Pouzeće
+                                        <input type="radio" name="radio" value="Muški">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button onclick="location.href='placanje.html';" type="button"
+                                class="btn btn-pogledajsve-blue h-75">PLAĆANJE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="contact container-lg">
+            <div class="row">
+                <div class="contact-form col-lg-5 col-10 offset-1 offset-lg-0">
+                    <form class="p-4 form-footer">
+                        <h2 class="header20-blue mb-4">Kontakt forma</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email-kontakt-forma" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="" placeholder="Message" rows="5"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center m-4">
+                            <button type="submit" id="kontakt-submit-forma"
+                                class="btn btn-pogledajsve-blue h-75 kontakt-submit-form">POŠALJI</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-5 col-6 mt-md-5 mb-md-1 ml-4 pr-0 d-flex footer-info">
+                    <ul>
+                        <li>
+                            <div class="header20-white py-4">Mljekara Lazine</div>
+                        </li>
+                        <li>
+                            <p><img src="img/placeholder.svg" alt="">Lazine bb, Danilovgrad 81410</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 169.svg" alt="">mljekara.lazine@yahoo.com</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 167.svg" alt="">Tel: +382 20 815 312</p>
+                        </li>
+                        <li>
+                            <p><img src="img/Group 168.svg" alt="">Fax: +382 20 815 313</p>
+                        </li>
+
+                    </ul>
+                    <div class="icon-tab">
+                        <p class="mt-3">Follow us on</p>
+                        <a class="icon-button" href="https://www.facebook.com/lazinemljekara/"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icon-button" href="https://www.instagram.com/mljekaralazine/"><i
+                                class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div id="map" class="col-lg-4 col-md-7 col-6 h-100" style="position: absolute; right: 0; bottom: 0;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-credists">
+        <h4>© Mljekara Lazine 2019, Powered by <a href="">Amplitudo</a></h4>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalRegister" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Registrujte se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" id="ime-reg" name="ime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Ime">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="prezime-reg" name="prezime-reg" style="border-radius: 0;"
+                                class="form-control" placeholder="Prezime">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="email" name="email" type="email" style="border-radius: 0;" class="form-control"
+                            placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" style="border-radius: 0;"
+                            class="form-control" placeholder="Nova lozinka">
+                    </div>
+
+                    <h6>Datum rođenja</h6>
+
+                    <div class="form-row mb-3">
+                        <div class="col-3">
+                            <select name="datepicker" id="datepicker">
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select>
+                                <option name="" id="januar">JAN</option>
+                                <option name="" id="februar">FEB</option>
+                                <option name="" id="mart">MAR</option>
+                                <option name="" id="april">APR</option>
+                                <option name="" id="maj">MAJ</option>
+                                <option name="" id="jun">JUN</option>
+                                <option name="" id="jul">JUL</option>
+                                <option name="" id="avgust">AVG</option>
+                                <option name="" id="septembar">SEP</option>
+                                <option name="" id="oktobar">OKT</option>
+                                <option name="" id="novembar">NOV</option>
+                                <option name="" id="decembar">DEC</option>
+                            </select>
+                        </div>
+
+                        <div class="col-3">
+                            <select name="yearpicker" id="yearpicker">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="container-radio mr-4">Ženski
+                            <input type="radio" name="radio" value="Ženski">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio">Muški
+                            <input type="radio" name="radio" value="Muški">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-inline">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-pogledajsve-blue float-right">REGISTRUJTE SE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Prijavite se</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input type="email" id="email-login" name="email-login" style="border-radius: 0;"
+                            class="form-control" placeholder="E-adresa ili broj telefona">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" style="border-radius: 0;" class="form-control" placeholder="Lozinka">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Zaboravili ste nalog?
+                        </a>
+                        <a class="mijenjaj-lozinku" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalLozinka">
+                            Mijenjajte lozinku.
+                        </a>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button id="prijava-submit" type="submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalLozinka" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="header20-blue mb-3">Mijenjajte lozinku</h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <div class="form-group">
+                        <input id="password-stari" type="password" style="border-radius: 0;" class="form-control"
+                            placeholder="Unesite poslednju lozinku">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi" style="border-radius: 0;" class="form-control"
+                            placeholder="Nova lozinka">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-novi-potvrda" style="border-radius: 0;" class="form-control"
+                            placeholder="Potvrdite novu lozinku">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5">
+                        <a class="otvori-nalog" data-toggle="modal" data-dismiss="modal"
+                            data-target="#exampleModalRegister">
+                            Otvorite nalog
+                        </a>
+
+                        <a>
+                            <button type="submit" id="promjena-lozinke-submit"
+                                class="btn btn-pogledajsve-blue float-right">DALJE</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.nice-select.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/custom-js.js"></script>
+
+    <script>
+        function initMap() {
+
+            var locationCenter = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var location = {
+                lat: 42.538,
+                lng: 19.134
+            };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: locationCenter,
+
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap">
+    </script>
+
+
+
+
+</body>
+
+</html>
